@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PHOTO_PATH="/home/pi/ndvi_still"
+DATE=$(date +"%Y-%m-%d_%H%M")
+
+if [ ! -d "$PHOTO_PATH" ]; then
+    mkdir -p $PHOTO_PATH
+fi
+
+# Taking the photos
+raspistill -o $PHOTO_PATH/$DATE.jpg
